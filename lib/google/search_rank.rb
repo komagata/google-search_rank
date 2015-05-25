@@ -48,14 +48,19 @@ module Google
         'q' => query,
         'start' => start,
       )
-      has_next_page = result.data.queries['nextPage'].count > 0
+      queries = result.data.queries
+      has_next_page = !queries.nil? && queries['nextPage'].count > 0
       has_result = result.data.items.count > 0
 
       return 0 unless has_result
 
       result.data.items.each_with_index do |item, i|
         puts "start: #{start}, i: #{i} rank: #{start + i}, query: #{query}, link: #{item.link}"
-        return start + i if item.link == link
+        if item.link =~ link
+          return start + i
+        elsif item.link == link
+          return start + i
+        end
       end
 
       if has_next_page
