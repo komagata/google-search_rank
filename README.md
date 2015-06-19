@@ -20,7 +20,10 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+```ruby
+client = Google::SearchRank.new(api_key: "xxxx", cse_id: "xxxx")
+rank = client.find("KEYWORD", %r{http://example.com/.*})
+```
 
 ## Development
 
