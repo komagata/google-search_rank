@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.email         = ["komagata@gmail.com"]
 
   spec.summary       = %q{Easy to get to Google Search ranks.}
-  spec.description   = %q{Easy to get to Google Search rankgs.}
+  spec.description   = %q{Easy to get to Google Search ranks.}
   spec.homepage      = "https://github.com/komagata/google-search_rank"
   spec.license       = "MIT"
 
